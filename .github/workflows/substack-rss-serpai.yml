@@ -1,6 +1,7 @@
-name: Generate RSS Feed for Substack - SERP AI
+name: RSS - Substack - SERP AI
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'substack/serpai/**'

@@ -1,4 +1,4 @@
-name: Generate RSS Feed for Substack - Devin Schumacher
+name: RSS - Substack - Devin Schumacher
 
 on:
   push:

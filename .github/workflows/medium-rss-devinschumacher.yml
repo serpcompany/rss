@@ -1,4 +1,4 @@
-name: RSS Feed for medium.com/@devinschumacher
+name: RSS - Medium - Devin Schumacher
 on:
   push:
     paths:
