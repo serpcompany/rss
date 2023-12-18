@@ -38,3 +38,31 @@ Github actions are intended to create/update the RSS feeds for each of the servi
 - `.github/workflows/rss-hashnode-serpai.yml`
 - `.github/workflows/rss-hashnode-devinschumacher.yml`
 
+## Repository Structure
+
+❯ tree -a -I '.git|.v*|.py*'
+.
+├── .github
+│   └── workflows
+│       ├── rss-medium-devinschumacher.yml
+│       ├── rss-medium-serpai.yml
+│       ├── rss-substack-devinschumacher.yml
+│       └── rss-substack-serpai.yml
+├── .gitignore
+├── README.md
+├── content
+│   ├── medium
+│   │   ├── devinschumacher
+│   │   └── serpai
+│   └── substack
+│       ├── devinschumacher
+│       └── serpai
+│           └── actor-critic.md
+├── docs
+│   └── markdown-template.md
+├── requirements.txt
+├── scripts
+│   └── generate_rss.py
+└── tests
+
+13 directories, 10 files
