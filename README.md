@@ -40,6 +40,7 @@ Github actions are intended to create/update the RSS feeds for each of the servi
 
 ## Repository Structure
 
+```bash
 ❯ tree -a -I '.git|.v*|.py*'
 .
 ├── .github
@@ -66,3 +67,4 @@ Github actions are intended to create/update the RSS feeds for each of the servi
 └── tests
 
 13 directories, 10 files
+```
