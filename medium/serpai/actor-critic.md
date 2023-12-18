@@ -18,7 +18,8 @@ tags:
 
 Actor-critic is a **temporal difference** algorithm used in **reinforcement learning**. It consists of two networks: the actor, which decides which action to take, and the critic, which evaluates the action produced by the actor by computing the value function and informs the actor how good the action was and how it should adjust. In simple terms, the actor-critic is a temporal difference version of policy gradient. The learning of the actor is based on a policy gradient approach.
 
-{% embed url="https://youtu.be/r2py_Z-bMuY?si=f_aULvOlWo55hC3g" %}
+[![Actor-Critic](http://img.youtube.com/vi/r2py_Z-bMuY/maxresdefault.jpg)](https://youtu.be/r2py_Z-bMuY)
+
 
 ### Actor-critic: Introduction
 
