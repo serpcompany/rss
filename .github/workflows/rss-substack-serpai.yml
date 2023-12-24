@@ -24,12 +24,12 @@ jobs:
         pip install -r requirements.txt
 
     - name: Generate RSS Feed
-      run: python ./scripts/generate_rss.py --source substack/serpai --output substack/serpai/feed.xml
+      run: python ./scripts/generate_rss.py --source content/substack/serpai --output content/substack/serpai/feed.xml
 
     - name: Commit and Push RSS Feed
       run: |
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'actions@github.com'
-        git add substack/serpai/feed.xml
+        git add content/substack/serpai/feed.xml
         git commit -m "Update Substack RSS Feed for SERP AI"
         git push
