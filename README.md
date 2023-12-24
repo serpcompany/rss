@@ -68,3 +68,50 @@ Github actions are intended to create/update the RSS feeds for each of the servi
 
 13 directories, 10 files
 ```
+
+---
+
+### Alternate structure
+
+```bash
+.
+├── .github
+│   └── workflows
+│       ├── rss-medium-devinschumacher.yml
+│       ├── rss-medium-serpai.yml
+│       ├── rss-substack-devinschumacher.yml
+│       └── rss-substack-serpai.yml
+├── .gitignore
+├── README.md
+├── content
+│   └── medium
+│   │   ├── devinschumacher
+│   │   │   └── article1.md
+│   │   │   └── article2.md
+│   │   └── serpai
+│   │       └── article1.md
+│   │       └── article2.md
+│   └── substack
+│       ├── devinschumacher
+│       │   └── article1.md
+│       │   └── article2.md
+│       └── serpai
+│           └── article1.md
+│           └── article2.md
+├── docs
+│   └── markdown-template.md
+├── requirements.txt
+├── scripts
+│   ├── medium
+│   │   ├── devinschumacher
+│   │   │   └── generate_rss.py
+│   │   └── serpai
+│   │       └── generate_rss.py
+│   └── substack
+│       ├── devinschumacher
+│       │    └── generate_rss.py
+│       └── serpai
+│           └── generate_rss.py
+│          
+└── tests
+```
