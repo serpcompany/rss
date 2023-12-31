@@ -1,11 +1,13 @@
 import os
-import argparse
 import markdown2
 from xml.etree.ElementTree import Element, SubElement, tostring
 import yaml
 import re
 from datetime import date
 
+PUBLICATION_TITLE = "SerpCompany"
+PUBLICATION_DESCRIPTION = "Description of SerpCompany"
+GH_PAGES_URL = "https://serpcompany.github.io/rss/"
 
 def parse_frontmatter(content):
     # Split the content into frontmatter and body
@@ -16,6 +18,7 @@ def parse_frontmatter(content):
 
 
 def create_rss_item(channel, title, link, description, pubDate):
+    print("Creating RSS item for " + title)
     item = SubElement(channel, "item")
     SubElement(item, "title").text = title
     SubElement(item, "link").text = link
@@ -33,9 +36,9 @@ def generate_rss(directory, output_file):
     channel = SubElement(root, "channel")
 
     # Add general channel elements
-    SubElement(channel, "title").text = "Your Publication Title"
-    SubElement(channel, "link").text = "http://your-publication-url.com"
-    SubElement(channel, "description").text = "Description of your publication"
+    SubElement(channel, "title").text = PUBLICATION_TITLE
+    SubElement(channel, "link").text = GH_PAGES_URL
+    SubElement(channel, "description").text = PUBLICATION_DESCRIPTION
 
     for filename in os.listdir(directory):
         if filename.endswith(".md"):
@@ -49,21 +52,25 @@ def generate_rss(directory, output_file):
                 title = frontmatter.get("title", "No Title")
                 link = frontmatter.get(
                     "link",
-                    f"http://your-publication-url.com/{filename.replace('.md', '.html')}",
+                    f"{GH_PAGES_URL}{filename.replace('.md', '.html')}",
                 )
                 description = frontmatter.get("description", html_content)
                 pubDate = frontmatter.get("date", "No Date")
 
                 create_rss_item(channel, title, link, description, pubDate)
 
+    # Create directories and files if they don't exist
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
     with open(output_file, "wb") as f:
         f.write(tostring(root))
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--source", required=True, help="Source directory")
-    parser.add_argument("--output", required=True, help="Output RSS file")
-    args = parser.parse_args()
-
-    generate_rss(args.source, args.output)
+    print("Generating RSS feeds")
+    # For every source
+    for source in os.listdir("./content"):
+        # For every author
+        for author in os.listdir("./content/" + source):
+            # Generate RSS in the RSS folder
+            print("Generating " + author + " RSS feed")
+            generate_rss("./content/" + source + "/" + author, "./rss/" + source + "/" + author + "/feed.xml")
