@@ -1,5 +1,5 @@
 ---
-title: "Actor-critic: Definition, Explanations, Examples & Codes"
+title: "Actor-critic: Definition, Explanations, Examples & Code"
 date: 2023-12-17
 description: "Actor-critic: Definition, Explanations, Examples & Code"
 author: "Devin Schumacher"
