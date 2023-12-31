@@ -5,12 +5,12 @@ on:
   push:
     paths:
       - 'content/**'
-      
+
 permissions:
   contents: write
 
 jobs:
-  build:
+  generate-rss:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,7 +31,19 @@ jobs:
     - name: Generate RSS Feed
       run: python ./scripts/generate_rss.py 
 
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
+    - name: Upload Artifact
+      uses: actions/upload-pages-artifact@v1
       with:
-        folder: rss # The folder the action should deploy.
+        path: 'rss'
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: generate-rss
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
