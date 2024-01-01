@@ -3,7 +3,7 @@ title: "Actor-critic: Definition, Explanations, Examples & Code"
 date: 2023-12-17
 description: "Actor-critic: Definition, Explanations, Examples & Code"
 author: "Devin Schumacher"
-categories: 
+categories:
   - artificial intelligence
   - machine learning
 tags:
@@ -19,7 +19,6 @@ tags:
 Actor-critic is a **temporal difference** algorithm used in **reinforcement learning**. It consists of two networks: the actor, which decides which action to take, and the critic, which evaluates the action produced by the actor by computing the value function and informs the actor how good the action was and how it should adjust. In simple terms, the actor-critic is a temporal difference version of policy gradient. The learning of the actor is based on a policy gradient approach.
 
 [![Actor-Critic](http://img.youtube.com/vi/r2py_Z-bMuY/maxresdefault.jpg)](https://youtu.be/r2py_Z-bMuY)
-
 
 ### Actor-critic: Introduction
 
@@ -124,7 +123,7 @@ Actor-critic is a type of Temporal Difference learning.
 
 #### What are the learning methods used by Actor-critic?
 
-* Reinforcement Learning
+- Reinforcement Learning
 
 #### How does the Actor-critic algorithm work?
 
@@ -132,9 +131,9 @@ The actor-critic algorithm works by having the actor decide which action to take
 
 #### What are the benefits of using Actor-critic?
 
-* It can handle high-dimensional state spaces and continuous action spaces.
-* It can provide more stable and efficient learning compared to other reinforcement learning methods.
-* It can be used for various applications such as game playing, robotics, and natural language processing.
+- It can handle high-dimensional state spaces and continuous action spaces.
+- It can provide more stable and efficient learning compared to other reinforcement learning methods.
+- It can be used for various applications such as game playing, robotics, and natural language processing.
 
 ### Actor-critic: ELI5
 
